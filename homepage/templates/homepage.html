@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Post</title>
+</head>
+  <body>
+  {% include 'navbar.html' %}
+<table border="1" style="margin:20px">
+  <tr>
+      <td style="padding:10px"><h3>Sr. No.</h3></td>
+    <td style="padding:10px"><h3>Blog List</h3> </td>
+  </tr>
+{% for x in my_blogs %}
+<tr>
+  <td style="padding:10px">{{ x.id }}</td>
+  <td style="padding:10px"><a href = 'description/{{x.id}}'>{{ x.title }}</a></td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

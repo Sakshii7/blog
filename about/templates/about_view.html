@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table border="1" style="margin:20px">
+  <tr>
+      <td style="padding:10px"><b> Name </b> </td>
+      <td style="padding:10px"><b> Description </b> </td>
+      <td style="padding:10px"><b> Contact </b> </td>
+      <td style="padding:10px"><b> Email </b> </td>
+
+  </tr>
+{% for x in about %}
+<tr>
+  <td style="padding:10px">{{ x.name }}</td>
+  <td style="padding:10px">{{x.description}}</td>
+    <td style="padding:10px">{{x.contact}}</td>
+    <td style="padding:10px">{{x.email}}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
