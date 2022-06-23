@@ -25,9 +25,9 @@ def add_contact(request):
     query = request.POST['query']
     if not re.fullmatch(regex, mobile):
         messages.info(request, 'Invalid Phone')
-        return redirect('contact')
+        # return redirect('contact')
     else:
         contact = Contact(name=name, email=email, mobile=mobile, query=query)
         contact.save()
-
+        messages.info(request, 'Thankyou For Contacting us.')
     return HttpResponseRedirect(reverse('contact'))
