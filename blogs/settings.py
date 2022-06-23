@@ -131,7 +131,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'homepage/static')
+    os.path.join(BASE_DIR, 'homepage/static'),
+    os.path.join(BASE_DIR, 'contactus/static'),
+    os.path.join(BASE_DIR, 'accounts/static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
