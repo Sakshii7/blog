@@ -17,7 +17,7 @@ def contact_page(request):
 
 def add_contact(request):
     regex = re.compile(
-        r'(/^[0-9]$/)')
+        r'(^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$)')
 
     name = request.POST['name']
     email = request.POST['email']
