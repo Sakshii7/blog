@@ -37,6 +37,13 @@
 									<li><a href="/">Home</a></li>
 									<li><a href="about">About us</a></li>
 									<li><a href="contact">Contact</a></li>
+									{% if user.is_authenticated %}
+				                    <li> Hello, {{user.first_name}}</li>
+									<li><a href="accounts/logout">Logout</a></li>
+				                     {% else %}
+				                     <li><a href="accounts/register">Register</a></li>
+				                     <li><a href="accounts/login">Login</a></li>
+			                         	{% endif %}
 								</ul>
 							</nav>
 							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
@@ -76,6 +83,7 @@
 				<li><a href="/">Home</a></li>
 				<li><a href="about">About us</a></li>
 				<li><a href="contact">Contact</a></li>
+
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -161,7 +169,7 @@
 							{% csrf_token %}
 							<div>
 										{% for message1 in messages %}
-								<p style="color:green"> <b>{{message1}} </b></p>
+								<p style="color:red"> <b>{{message1}} </b></p>
                                        {% endfor %}
 									</div>
 							<div style="margin-bottom: 18px"><input type="text" name="name" class="contact_input contact_input_name inpt" placeholder="Your Name" required="required"><div class="input_border" style="visibility: hidden; opacity: 0;"></div></div>
