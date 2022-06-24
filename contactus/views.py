@@ -19,6 +19,9 @@ def add_contact(request):
     regex = re.compile(
         r'(^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$)')
 
+    reg = re.compile(
+        r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
+
     name = request.POST['name']
     email = request.POST['email']
     mobile = request.POST['mobile']
@@ -26,6 +29,9 @@ def add_contact(request):
     if not re.fullmatch(regex, mobile):
         messages.info(request, 'Invalid Phone')
         # return redirect('contact')
+    elif not re.fullmatch(reg, email):
+        messages.info(request, 'Invalid Email')
+        # return redirect('register')
     else:
         contact = Contact(name=name, email=email, mobile=mobile, query=query)
         contact.save()

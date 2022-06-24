@@ -161,7 +161,7 @@
 							{% csrf_token %}
 							<div>
 										{% for message1 in messages %}
-                                            <p style="color:green"> {{message1}} </p>
+								<p style="color:green"> <b>{{message1}} </b></p>
                                        {% endfor %}
 									</div>
 							<div style="margin-bottom: 18px"><input type="text" name="name" class="contact_input contact_input_name inpt" placeholder="Your Name" required="required"><div class="input_border" style="visibility: hidden; opacity: 0;"></div></div>
