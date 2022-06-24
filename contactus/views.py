@@ -31,7 +31,6 @@ def add_contact(request):
         # return redirect('contact')
     elif not re.fullmatch(reg, email):
         messages.info(request, 'Invalid Email')
-        # return redirect('register')
     else:
         contact = Contact(name=name, email=email, mobile=mobile, query=query)
         contact.save()
