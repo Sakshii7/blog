@@ -5,7 +5,7 @@ from django.db import models
 
 class About(models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255, null=True)
+    description = models.TextField(max_length=2555, null=True)
     contact = models.IntegerField()
     email = models.CharField(max_length=255, null=True)
 
