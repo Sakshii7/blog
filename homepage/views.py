@@ -7,6 +7,7 @@ from django.template import loader
 from django.urls import reverse
 from .models import Blogs
 from .models import Destination
+from blogs.settings import MEDIA_URL
 
 
 def index(request):
@@ -16,6 +17,7 @@ def index(request):
     context = {
         'my_blogs': my_blogs,
         'destination': destination,
+        'media_url': MEDIA_URL
     }
     return HttpResponse(template.render(context, request))
 
