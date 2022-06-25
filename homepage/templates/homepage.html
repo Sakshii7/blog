@@ -250,10 +250,9 @@
                         {% for y in destination %}
                         <!-- Destination -->
                         <div class="destination item">
-
                             <div class="destination_image">
                                 <img src="{{media_url}}/{{y.image}}" alt="">
-                                {% if destination.offer %}
+                                {% if y.offer %}
                                 <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
                                 {% endif %}
                             </div>
@@ -265,7 +264,7 @@
                         </div>
                         {% endfor %}
                     </div>
-                    </div>
+
 
                 </div>
             </div>
