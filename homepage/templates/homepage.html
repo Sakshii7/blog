@@ -1,5 +1,4 @@
 {% load static %}
-{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,7 @@
                                     <li><a href="about">About us</a></li>
                                     <li><a href="contact">Contact</a></li>
                                     {% if user.is_authenticated %}
-                                      <li> Hello, {{user.first_name}}</li>
+                                    <li> <a href="accounts/user_profile"> My Profile </a> </li>
                                       <li><a href="accounts/logout">Logout</a></li>
                                     {% else %}
                                     <li><a href="accounts/register">Register</a></li>
@@ -72,7 +71,7 @@
 
     <div class="menu">
         <div class="menu_header d-flex flex-row align-items-center justify-content-start">
-            <div class="menu_logo"><a href="index.html">Travello</a></div>
+            <div class="menu_logo"><a href="/">Travello</a></div>
             <div class="menu_close_container ml-auto">
                 <div class="menu_close">
                     <div></div>
@@ -265,7 +264,6 @@
                         {% endfor %}
                     </div>
 
-
                 </div>
             </div>
         </div>
@@ -353,70 +351,32 @@
             <div class="row">
                 <div class="col-xl-8">
                     <div class="news_container">
+                         {% for x in testimonials %}
 
                         <!-- News Post -->
                         <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="{% static 'images/news_1.jpg' %}" alt=""></div>
-                            <div class="news_post_content">
-                                <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-                                    <div>02</div>
-                                    <div>june</div>
-                                </div>
-                                <div class="news_post_title"><a href=""></a></div>
-                                <div class="news_post_category">
-                                    <!--									<ul>-->
-                                    <!--										<li><a href="#">lifestyle & travel</a></li>-->
-                                    <!--									</ul>-->
-                                </div>
-                                <div class="news_post_text">
-                                    <p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.
-                                        Vivamus massa.Tempor massa et laoreet.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- News Post -->
-                        <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="{% static 'images/news_2.jpg' %}" alt=""></div>
+                            <div class="news_post_image"><img src="{{media_url}}/{{x.image}}" alt=""></div>
                             <div class="news_post_content">
+
                                 <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-                                    <div>01</div>
-                                    <div>june</div>
+                                    <div>{{x.date}}</div>
+                                    <div></div>
                                 </div>
-                                <div class="news_post_title"><a href="#">Best tips to travel light</a></div>
+                                <div class="news_post_title"><a href="">{{x.title}}</a></div>
                                 <div class="news_post_category">
                                     <ul>
-                                        <li><a href="#">lifestyle & travel</a></li>
+                                        <li><a href="#"></a></li>
                                     </ul>
                                 </div>
                                 <div class="news_post_text">
-                                    <p>Tempor massa et laoreet malesuada. Pellentesque sit amet elementum ccumsan sit
-                                        amet mattis eget, tristique at leo.</p>
+                                    <p>{{x.description}}</p>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- News Post -->
-                        <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
-                            <div class="news_post_image"><img src="{% static 'images/news_3.jpg' %}" alt=""></div>
-                            <div class="news_post_content">
-                                <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
-                                    <div>29</div>
-                                    <div>may</div>
-                                </div>
-                                <div class="news_post_title"><a href="#">Best tips to travel light</a></div>
-                                <div class="news_post_category">
-                                    <ul>
-                                        <li><a href="#">lifestyle & travel</a></li>
-                                    </ul>
-                                </div>
-                                <div class="news_post_text">
-                                    <p>Vivamus massa.Tempor massa et laoreet malesuada. Aliquam nulla nisl, accumsan sit
-                                        amet mattis.</p>
-                                </div>
-                            </div>
-                        </div>
 
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
 
@@ -553,27 +513,3 @@
 <script src="{% static 'js/custom.js' %}"></script>
 </body>
 </html>
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Blog Post</title>-->
-<!--</head>-->
-<!--  <body>-->
-<!--  {% include 'navbar.html' %}-->
-<!--<table border="1" style="margin:20px">-->
-<!--  <tr>-->
-<!--      <td style="padding:10px"><h3>Sr. No.</h3></td>-->
-<!--    <td style="padding:10px"><h3>Blog List</h3> </td>-->
-<!--  </tr>-->
-<!--{% for x in my_blogs %}-->
-<!--<tr>-->
-<!--  <td style="padding:10px">{{ x.id }}</td>-->
-<!--  <td style="padding:10px"><a href = 'description/{{x.id}}'>{{ x.title }}</a></td>-->
-<!--</tr>-->
-<!--{% endfor %}-->
-<!--</table>-->
-<!--</body>-->
-<!--</html>-->

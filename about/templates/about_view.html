@@ -34,7 +34,7 @@
 									<li class="active"><a href="about">About us</a></li>
 									<li><a href="contact">Contact</a></li>
 									{% if user.is_authenticated %}
-				                    <li> Hello, {{user.first_name}}</li>
+				                        <li><a href="accounts/user_profile">My profile</a></li>
 				                    <li><a href="accounts/logout">Logout</a></li>
 			                       	{% else %}
 			                     	<li><a href="accounts/register">Register</a></li>
@@ -287,62 +287,29 @@
 					<div class="section_title"><h2>Meet the Team</h2></div>
 				</div>
 			</div>
+
 			<div class="row team_row">
-
+              {% for x in team %}
 				<!-- Team Item -->
 				<div class="col-xl-3 col-md-6 team_col">
+
 					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_1.jpg' %}" alt=""></div>
+						<div class="team_image"><img src="{{media_url}}/{{x.image}}" alt=""></div>
 						<div class="team_content">
-							<div class="team_title"><a href="#">Margaret Smith</a></div>
+							<div class="team_title"><a href="#">{{x.name}}</a></div>
 							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
+								<p>{{x.description}}</p>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_2.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">James Williams</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
 				</div>
-
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_3.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Michael James</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="{% static 'images/team_4.jpg' %}" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Noah Smith</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
+                  {% endfor %}
 
 			</div>
+
 		</div>
+
 	</div>
 
 	<!-- Footer -->
@@ -442,28 +409,3 @@ Copyright ©<script>document.write(new Date().getFullYear());</script>2022 All r
 
 
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--</head>-->
-<!--<body>-->
-<!--<table border="1" style="margin:20px">-->
-<!--  <tr>-->
-<!--      <td style="padding:10px"><b> Name </b> </td>-->
-<!--      <td style="padding:10px"><b> Description </b> </td>-->
-<!--      <td style="padding:10px"><b> Contact </b> </td>-->
-<!--      <td style="padding:10px"><b> Email </b> </td>-->
-
-<!--  </tr>-->
-<!--{% for x in about %}-->
-<!--<tr>-->
-<!--  <td style="padding:10px">{{ x.name }}</td>-->
-<!--  <td style="padding:10px">{{x.description}}</td>-->
-<!--    <td style="padding:10px">{{x.contact}}</td>-->
-<!--    <td style="padding:10px">{{x.email}}</td>-->
-<!--</tr>-->
-<!--{% endfor %}-->
-<!--</table>-->
-<!--</body>-->
-<!--</html>-->

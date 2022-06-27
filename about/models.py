@@ -10,3 +10,7 @@ class About(models.Model):
     email = models.CharField(max_length=255, null=True)
 
 
+class Team(models.Model):
+    name = models.CharField(max_length=25)
+    description = models.TextField(max_length=1255)
+    image = models.ImageField(upload_to='pics')
