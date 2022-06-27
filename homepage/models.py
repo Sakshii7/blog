@@ -24,3 +24,6 @@ class Testimonials(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=2555)
 
+
+
+

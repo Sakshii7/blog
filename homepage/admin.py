@@ -17,6 +17,7 @@ class TestimonialsAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
 
 
+
 admin.site.register(Blogs, BlogsAdmin)
 admin.site.register(Destination, DestinationsAdmin)
 admin.site.register(Testimonials, TestimonialsAdmin)

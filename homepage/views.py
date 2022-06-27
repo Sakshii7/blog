@@ -7,6 +7,7 @@ from django.template import loader
 from .models import Blogs
 from .models import Destination
 from .models import Testimonials
+
 from blogs.settings import MEDIA_URL
 
 
