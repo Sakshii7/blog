@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+{{ '<' }}{{ '!DOCTYPE html>' }}
 <html lang="en">
 <head>
     <title>Travello</title>
@@ -209,9 +209,7 @@
                 <div class="col">
                     <div class="intro_container">
                         <div class="intro_title">User Profile </div><br>
-
                         <div class="row">
-
                             <!-- Intro Item -->
                            {% if user.is_authenticated %}
                             <div class="col-lg-4 intro_col">
@@ -223,11 +221,8 @@
                                     <div class="intro_content">
                                         <div class="section_title">{{user.first_name}} {{user.last_name}}</div>
                                         <div class="section_title">{{user.email}}</div>
-
                                     </div>
-
                                 </div>
-
                             {% endif %}
                         </div>
                     </div>

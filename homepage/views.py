@@ -15,6 +15,7 @@ def index(request):
     destination = Destination.objects.all().values()
     testimonials = Testimonials.objects.all().values()
     template = loader.get_template('homepage.html')
+
     context = {
         'my_blogs': my_blogs,
         'destination': destination,
